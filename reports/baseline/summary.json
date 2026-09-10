@@ -1,0 +1,199 @@
+{
+  "title": "ECG-only STEMI versus NSTEMI baseline",
+  "cohort_audit": {
+    "input_records": 17960,
+    "excluded_neither_records": 15283,
+    "excluded_both_label_records": 0,
+    "excluded_conflict_patients": 13,
+    "eligible_records": 2677,
+    "cohort_records": 2625,
+    "cohort_patients": 2625,
+    "stemi_records": 1424,
+    "nstemi_records": 1201,
+    "invalid_signal_records": 7,
+    "exact_duplicate_records_excluded": 0,
+    "final_eligible_patients": 2618
+  },
+  "split_counts": {
+    "train": {
+      "n_patients": 1570,
+      "n_stemi": 852,
+      "n_nstemi": 718
+    },
+    "validation": {
+      "n_patients": 524,
+      "n_stemi": 284,
+      "n_nstemi": 240
+    },
+    "test": {
+      "n_patients": 524,
+      "n_stemi": 284,
+      "n_nstemi": 240
+    }
+  },
+  "feature_count": 664,
+  "selection": [
+    {
+      "C": 0.01,
+      "validation_auroc": 0.7676203051643193
+    },
+    {
+      "C": 0.1,
+      "validation_auroc": 0.749369131455399
+    },
+    {
+      "C": 1.0,
+      "validation_auroc": 0.729093309859155
+    }
+  ],
+  "selected_C": 0.01,
+  "threshold": 0.6120887384859828,
+  "validation_metrics": {
+    "auroc": 0.7676203051643193,
+    "average_precision": 0.7821259145639552,
+    "accuracy": 0.6889312977099237,
+    "balanced_accuracy": 0.6991490610328639,
+    "sensitivity": 0.5774647887323944,
+    "specificity": 0.8208333333333333,
+    "precision": 0.7922705314009661,
+    "f1": 0.6680244399185336,
+    "brier_score": 0.19683979892053416,
+    "threshold": 0.6120887384859828,
+    "n_patients": 524,
+    "stemi_prevalence": 0.5419847328244275,
+    "confusion_matrix": [
+      [
+        197,
+        43
+      ],
+      [
+        120,
+        164
+      ]
+    ]
+  },
+  "test_metrics": {
+    "auroc": 0.7839642018779343,
+    "average_precision": 0.8073626469313593,
+    "accuracy": 0.6965648854961832,
+    "balanced_accuracy": 0.7087734741784038,
+    "sensitivity": 0.5633802816901409,
+    "specificity": 0.8541666666666666,
+    "precision": 0.8205128205128205,
+    "f1": 0.6680584551148225,
+    "brier_score": 0.18950919193016502,
+    "threshold": 0.6120887384859828,
+    "n_patients": 524,
+    "stemi_prevalence": 0.5419847328244275,
+    "confusion_matrix": [
+      [
+        205,
+        35
+      ],
+      [
+        124,
+        160
+      ]
+    ]
+  },
+  "dummy_metrics": {
+    "auroc": 0.5,
+    "average_precision": 0.5419847328244275,
+    "accuracy": 0.5419847328244275,
+    "balanced_accuracy": 0.5,
+    "sensitivity": 1.0,
+    "specificity": 0.0,
+    "precision": 0.5419847328244275,
+    "f1": 0.7029702970297029,
+    "brier_score": 0.24823775889829078,
+    "threshold": 0.5,
+    "n_patients": 524,
+    "stemi_prevalence": 0.5419847328244275,
+    "confusion_matrix": [
+      [
+        0,
+        240
+      ],
+      [
+        0,
+        284
+      ]
+    ]
+  },
+  "confidence_intervals": {
+    "auroc": [
+      0.7440684431438667,
+      0.8202828081341341
+    ],
+    "average_precision": [
+      0.7619280555758157,
+      0.8536106686114854
+    ],
+    "balanced_accuracy": [
+      0.6724129683260527,
+      0.7423283670184393
+    ],
+    "sensitivity": [
+      0.5051190567779659,
+      0.6190518556176919
+    ],
+    "specificity": [
+      0.8086823425022183,
+      0.9004149377593361
+    ]
+  },
+  "config": {
+    "seed": 42,
+    "n_bootstrap": 1000,
+    "feature_version": "1.0",
+    "target": "STEMI=1, NSTEMI=0",
+    "one_ecg_per_patient": true,
+    "selection_metric": "validation AUROC",
+    "threshold_rule": "validation maximum Youden J; nearest 0.5 breaks ties"
+  },
+  "provenance": {
+    "dataset_doi": "10.6084/m9.figshare.29925314",
+    "paper_doi": "10.1038/s41597-026-07278-0",
+    "metadata_sha256": "15fdb9b576da88acc31d07612e457848a3d3502ea4955ffd3fed845968310907",
+    "source_manifest": {
+      "article_id": 29925314,
+      "doi": "10.6084/m9.figshare.29925314.v1",
+      "files": [
+        {
+          "download_url": "https://api.figshare.com/v2/file/download/62951134",
+          "id": 62951134,
+          "md5": "1cb46279c0e68e6512bd39214fc56528",
+          "name": "CSV.zip",
+          "sha256": "675a57e90eea1175259301293812ec0a23c73f83ec7fb352a8309f05843d0005",
+          "size": 296769
+        },
+        {
+          "download_url": "https://api.figshare.com/v2/file/download/62951395",
+          "id": 62951395,
+          "md5": "acea6ca86a2d0b937ecfe7d1df6d30a2",
+          "name": "ECG_row_data.zip",
+          "sha256": "9a5a1bf1655b28d09de152bd4bf443c491cef4a1adff108b40938ee90e6693c4",
+          "size": 1277577332
+        }
+      ],
+      "license": {
+        "name": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "value": 2
+      },
+      "published_date": "2026-07-09T07:01:18Z",
+      "source": "Figshare",
+      "title": "A large-scale 12-lead electrocardiogram dataset for acute coronary syndrome prediction containing 19,955 ECGs",
+      "version": 1
+    },
+    "python": "3.10.11",
+    "packages": {
+      "numpy": "2.2.6",
+      "pandas": "2.3.3",
+      "scipy": "1.15.3",
+      "scikit-learn": "1.7.2",
+      "wfdb": "4.3.1",
+      "matplotlib": "3.10.9"
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "title": "1D CNN STEMI versus NSTEMI on ACS ECG",
+  "dataset": "Du et al. ACS ECG dataset, Figshare 29925314 v1",
+  "positive_class": "STEMI",
+  "same_patient_split_as_logistic_baseline": true,
+  "split_counts": {
+    "train": 1570,
+    "validation": 524,
+    "test": 524
+  },
+  "model": "12-lead 1D CNN, convolution channels 16/32/64, global average pooling",
+  "optimizer": "Adam",
+  "learning_rate": 0.001,
+  "epochs_run": 15,
+  "batch_size": 64,
+  "selected_epoch": 14,
+  "validation_auroc": 0.8372799295774647,
+  "validation_threshold": 0.5124678611755371,
+  "history": [
+    {
+      "epoch": 1,
+      "training_loss": 0.6516304206848145,
+      "validation_auroc": 0.7262030516431923
+    },
+    {
+      "epoch": 2,
+      "training_loss": 0.5756942963600159,
+      "validation_auroc": 0.7678550469483567
+    },
+    {
+      "epoch": 3,
+      "training_loss": 0.541548011302948,
+      "validation_auroc": 0.7665639671361503
+    },
+    {
+      "epoch": 4,
+      "training_loss": 0.5208083724975586,
+      "validation_auroc": 0.7811179577464789
+    },
+    {
+      "epoch": 5,
+      "training_loss": 0.5013857078552246,
+      "validation_auroc": 0.780956572769953
+    },
+    {
+      "epoch": 6,
+      "training_loss": 0.48892752766609193,
+      "validation_auroc": 0.7993838028169014
+    },
+    {
+      "epoch": 7,
+      "training_loss": 0.46809290051460267,
+      "validation_auroc": 0.8095363849765259
+    },
+    {
+      "epoch": 8,
+      "training_loss": 0.4651051390171051,
+      "validation_auroc": 0.8144659624413145
+    },
+    {
+      "epoch": 9,
+      "training_loss": 0.4453262233734131,
+      "validation_auroc": 0.8191461267605633
+    },
+    {
+      "epoch": 10,
+      "training_loss": 0.43431840419769285,
+      "validation_auroc": 0.8134683098591549
+    },
+    {
+      "epoch": 11,
+      "training_loss": 0.4277442693710327,
+      "validation_auroc": 0.8134976525821596
+    },
+    {
+      "epoch": 12,
+      "training_loss": 0.4348037028312683,
+      "validation_auroc": 0.8114143192488263
+    },
+    {
+      "epoch": 13,
+      "training_loss": 0.4156607937812805,
+      "validation_auroc": 0.8229460093896714
+    },
+    {
+      "epoch": 14,
+      "training_loss": 0.40085534811019896,
+      "validation_auroc": 0.8372799295774647
+    },
+    {
+      "epoch": 15,
+      "training_loss": 0.41133096575737,
+      "validation_auroc": 0.8245011737089202
+    }
+  ],
+  "test_metrics": {
+    "auroc": 0.8023034037558686,
+    "average_precision": 0.8131274776927179,
+    "accuracy": 0.7461832061068703,
+    "balanced_accuracy": 0.7448650234741784,
+    "sensitivity": 0.7605633802816901,
+    "specificity": 0.7291666666666666,
+    "precision": 0.7686832740213523,
+    "f1": 0.7646017699115044,
+    "brier_score": 0.1818257174422234,
+    "threshold": 0.5124678611755371,
+    "n_patients": 524,
+    "stemi_prevalence": 0.5419847369194031,
+    "confusion_matrix": [
+      [
+        175,
+        65
+      ],
+      [
+        68,
+        216
+      ]
+    ]
+  },
+  "limitations": "Internal held-out test only; no external hospital validation. The CNN is a research baseline, not a clinical device."
+}

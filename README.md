@@ -1,5 +1,8 @@
 # MI lab: STEMI versus NSTEMI from ECG
 
+The same patient split can also be used to train a 1D CNN directly on ECG waveforms.
+See [docs/cnn-experiment.md](docs/cnn-experiment.md) for the command, model and results.
+
 A reproducible, CPU-friendly research baseline using the **Du et al. ACS ECG dataset**,
 not PTB-XL. The experiment predicts **STEMI (1) versus NSTEMI (0)** among labelled MI
 patients. It does **not** detect MI in the general population or provide clinical advice.
